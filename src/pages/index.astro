@@ -1,6 +1,13 @@
 ---
+import RecipeList from '@/components/RecipeList';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getRecipes } from '@/utils'
+
+const MAX_POSTS = 5; // max number of posts to show on the home page
+const recipes = await getRecipes(MAX_POSTS);
 ---
 
 <BaseLayout title="Welcome to Astro.">
+    <RecipeList recipes={recipes}>
+    </RecipeList>
 </BaseLayout>

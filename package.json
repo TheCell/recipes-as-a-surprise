@@ -1,7 +1,14 @@
 {
-  "name": "cyan-conjunction",
+  "name": "recipe-as-a-surprise",
   "type": "module",
   "version": "0.0.1",
+	"keywords": [
+		"astro",
+		"astrojs",
+		"astro-template",
+		"astro-blog",
+		"astro-b"
+	],
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

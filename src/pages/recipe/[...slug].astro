@@ -1,0 +1,38 @@
+---
+import { type CollectionEntry } from 'astro:content';
+import RecipeLayout from '@/layouts/RecipeLayout';
+import { getRecipes } from '@/utils';
+import Ingredients from '@/components/Ingredients';
+
+// const recipes = await getCollection('recipe');
+export async function getStaticPaths() {
+	const recipes = await getRecipes();
+
+	return recipes.map((recipe) => ({
+		params: { slug: recipe.slug },
+		props: recipe
+	}));
+}
+type Props = CollectionEntry<'recipe'>;
+
+const recipe = Astro.props;
+const ingredients = recipe.data.ingredients;
+
+const { Content } = await recipe.render();
+// const { Content, headings, remarkPluginFrontmatter } = await recipe.render()
+
+---
+
+<RecipeLayout
+    id={recipe.id}
+    data={recipe.data}>
+    <Ingredients ingredients={ingredients}></Ingredients>
+    <div class="content">
+        <Content />
+    </div>
+    <style>
+        .content {
+            grid-area: content;
+        }
+    </style>
+</RecipeLayout>

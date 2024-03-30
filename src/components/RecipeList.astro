@@ -1,0 +1,25 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import RecipeCard from './RecipeCard.astro'
+
+
+type Props = {
+	recipes: CollectionEntry<'recipe'>[]
+}
+
+
+const { recipes } = Astro.props;
+---
+
+<section>
+{
+    recipes && recipes.map(async (recipe) => {
+        return (
+            <RecipeCard
+                id={recipe.id}
+                data={recipe.data}
+                slug={recipe.slug} />
+        )
+    })
+}
+</section>

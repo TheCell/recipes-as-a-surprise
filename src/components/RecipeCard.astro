@@ -1,0 +1,36 @@
+---
+import { Image } from 'astro:assets'
+import FormattedDate from '@/components/FormattedDate';
+
+const {
+	id,
+	data: { title, pubDate, image, category },
+	slug
+} = Astro.props
+---
+
+<div>
+    {{id}}
+    <a class='relative overflow-hidden' href={`/recipe/${slug}/`}>
+		<Image
+			src={image}
+			width={600}
+			height={200}
+			format='webp'
+			class='h-full min-w-full object-cover hover:scale-[101%] transition-all duration-200 rounded-[2px]'
+			alt={`img of ${title}`}
+		/>
+
+		<div class=''>
+			<div class=''></div>
+			<div class=''>
+				<div class=''>
+					<FormattedDate date={pubDate} />
+					<!-- <span class='text-sm'> {readTime}</span> -->
+				</div>
+
+				<span class='pb-4'>{category}</span>
+			</div>
+		</div>
+	</a>
+</div>

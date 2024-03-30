@@ -1,0 +1,23 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import BaseLayout from '@/layouts/BaseLayout'
+
+type Props = {
+	id: CollectionEntry<'recipe'>['id']
+	data: CollectionEntry<'recipe'>['data']
+}
+
+const { data } = Astro.props
+const { title, description, pubDate, image: image, tags } = data
+
+const articleDate = pubDate.toISOString()
+---
+
+<BaseLayout
+    title={title}
+    description={description}
+    image={image?.src}
+    articleDate={articleDate}>
+    <span>{{tags}}</span>
+    <slot />
+</BaseLayout>

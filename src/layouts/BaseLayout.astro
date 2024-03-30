@@ -22,9 +22,20 @@ const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`;
 
 	<body>
 		<Header />
-		Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum corporis reiciendis magnam aut laboriosam placeat natus, aperiam dolore rem odit vel est quae maiores officiis adipisci voluptate ut, delectus blanditiis.
 		<slot />
 		<Footer />
+
+		<style>
+			body {
+				display: grid;
+				grid-template-columns: 2fr 8fr 2fr;
+				grid-template-rows: auto;
+				grid-template-areas: 
+					"header header header"
+					"sidepanelleft content sidepanelright"
+					"footer footer footer";
+			}
+		</style>
 	</body>
 
 	<!-- <body class='bg-white text-stone-950 dark:bg-[#0a0910] dark:text-white'>

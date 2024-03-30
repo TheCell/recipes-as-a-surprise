@@ -4,5 +4,9 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [sitemap(), tailwind()]
+  site: 'https://recipes.thecell.eu/',
+  integrations: [sitemap(), tailwind()],
+  markdown: {
+    drafts: true
+  }
 });

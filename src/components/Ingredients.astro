@@ -1,0 +1,24 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+type Props = {
+    ingredients: CollectionEntry<'recipe'>['data']['ingredients']
+}
+
+const { ingredients } = Astro.props;
+
+---
+<div class="ingredientList">
+    {
+        ingredients.map((ingredient) => {
+            return <div>
+                <span>{ingredient.name}</span>
+            </div>
+        })
+    }
+</div>
+<style>
+    .ingredientList {
+        grid-area: sidepanelleft;
+    }
+</style>
