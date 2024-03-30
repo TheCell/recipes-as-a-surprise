@@ -1,0 +1,43 @@
+---
+import BaseHead from '@/components/BaseHead'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+// import ProviderTheme from '@/components/ProviderTheme'
+// import ProviderAnimations from '@/components/ProviderAnimations'
+// import EditBlog from '@/components/editBlog'
+import { siteConfig } from '@/data/site.config'
+const { title, description, image, articleDate } = Astro.props
+
+const titleSeparator = '•'
+const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`;
+---
+
+<html lang='en' class='scroll-smooth'>
+	<head>
+		<title>{ siteTitle }</title>
+		<BaseHead title={title} description={description} ogImage={image} articleDate={articleDate} />
+		<!-- <ProviderTheme />
+		<ProviderAnimations /> -->
+	</head>
+
+	<body>
+		<Header />
+		Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum corporis reiciendis magnam aut laboriosam placeat natus, aperiam dolore rem odit vel est quae maiores officiis adipisci voluptate ut, delectus blanditiis.
+		<slot />
+		<Footer />
+	</body>
+
+	<!-- <body class='bg-white text-stone-950 dark:bg-[#0a0910] dark:text-white'>
+		<main class='px-5 sm:mx-auto sm:max-w-2xl sm:px-8 lg:px-0 antialiased md:max-w-6xl grid gap-12 mt-4 overflow-hidden md:overflow-visible'>
+			<Header />
+			<slot />
+			<Footer />
+		</main>
+		<EditBlog />
+		<style>
+			body {
+				margin-left: calc(100vw - 100%); /* prevent layout shift */
+			}
+		</style>
+	</body> -->
+</html>

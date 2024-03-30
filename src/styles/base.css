@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'JosefinSlab';
+    src: url('/fonts/JosefinSlab-VariableFont_wght.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+html {
+    font-family: 'JosefinSlab', 'Josefin Slab', serif;
+    font-weight: 500;
+}
