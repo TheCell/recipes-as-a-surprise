@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'JosefinSlab';
-    src: url('/fonts/JosefinSlab-VariableFont_wght.ttf') format('ttf');
+    font-family: 'Josefin Slab Regular';
+    src: url('/fonts/JosefinSlab-VariableFont_wght.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
   }
 
 html {
-    font-family: 'JosefinSlab', 'Josefin Slab', serif;
+    font-family: 'Josefin Slab', serif;
     font-weight: 500;
 }

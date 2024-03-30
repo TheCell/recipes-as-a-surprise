@@ -82,5 +82,5 @@ ingredients: [
 ]
 ---
 1. Kartoffeln in der Schale 20-30 Minuten garen. Kurz mit kaltem Wasser abschrecken und noch warm schälen, in Scheiben schneiden und in eine grosse Schüssel geben.
-2. Wasser zusammen mit Bouillonwürfel und gehackter Zwiebel aufkochen, Essig beigeben und über die Kartoffelscheiben giessen. Ca. 30 Minuten ziehen lassen, ab und zu schwenken.
+2. Wasser zusammen mit Bouillonwürfel und gehackter Zwiebel aufkochen, Essig beigeben und über die Kartoffelscheiben giessen. Ca. 30 _Minuten_ **ziehen** lassen, ab und zu schwenken.
 3. Sauce: Alles bis und mit Rapsöl mischen und vorsichtig unter die Kartoffeln mischen. Abschmecken, Anrichten und mit Schnittlauch garnieren.
