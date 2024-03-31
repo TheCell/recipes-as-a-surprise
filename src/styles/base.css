@@ -43,3 +43,27 @@ h1 {
   color: var(--color-accent);
   font-weight: 700;
 }
+
+.content ol {
+  counter-reset: item;
+  list-style: decimal;
+}
+
+.content li {
+  display: block;
+  margin: 10px;
+  margin-left: 3em;
+  margin-bottom: 1em;
+}
+
+.content li::before {
+  display: inline-block;
+  content: counter(item) ") ";
+  counter-increment: item;
+  margin-left: -3em;
+  margin-right: 1em;
+  border-radius: 20px;
+  padding: 5px 10px;
+  background-color: var(--color-accent);
+  color: var(--color-accent-text);
+}
