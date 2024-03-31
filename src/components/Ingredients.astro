@@ -1,24 +1,169 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import PlusIcon from './icons/PlusIcon.astro';
+import MinusIcon from './icons/MinusIcon.astro';
 
 type Props = {
     ingredients: CollectionEntry<'recipe'>['data']['ingredients']
+    portion: CollectionEntry<'recipe'>['data']['portion']
 }
 
-const { ingredients } = Astro.props;
+const { ingredients, portion } = Astro.props;
+const originalAmount = portion.amount;
 
 ---
-<div class="ingredientList">
+<ingredient-container data-originalamount={ originalAmount } class="ingredientContainer">
     {
-        ingredients.map((ingredient) => {
+        ingredients.map((ingredient, index) => {
             return <div>
-                <span>{ingredient.name}</span>
+                <div class="ingredientList">
+                    <h1>
+                        { ingredient.name }
+                        <span class:list={[index > 0 ? 'hidden' : '']}>
+                            <span class="font-bold amount" data-originalamount={portion.amount}>{ portion.amount }</span> { portion.measure }
+                        </span>
+                    </h1>
+                    <div class:list={['portion', index > 0 ? 'hidden' : '']} >
+                        <span>
+                            <button id="minus">
+                                <MinusIcon />
+                            </button>
+                            <button id="plus">
+                                <PlusIcon />
+                            </button>
+                        </span>
+                    </div>
+                    <ul>
+                        {
+                            ingredient.ingredients.map((subIngredient) => {
+                                return <li>
+                                    <span class="font-bold ingredientAmount"><span class="amount" data-originalamount={subIngredient.amount}>{ subIngredient.amount }</span> <span>{ subIngredient.measure }</span></span>
+                                    <span class="ingredientName">{ subIngredient.name }</span>
+                                </li>
+                            })
+                        }
+                    </ul>
+                </div>
             </div>
         })
     }
-</div>
+</ingredient-container>
+
 <style>
-    .ingredientList {
+    .ingredientContainer {
         grid-area: sidepanelleft;
+        padding: 30px;
     }
+
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        padding: 0px 10px;
+    }
+
+    h1 span {
+        float: right;
+    }
+
+    ul {
+        margin-bottom: 10px;
+        margin: 0px 15px;
+    }
+
+    li {
+        margin-bottom: 5px;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+    }
+    
+    .portion {
+        margin: 0px 15px;
+        text-align: right;
+    }
+
+    .portion button {
+        font-size: 0.5em;
+        border-radius: 20px;
+        background-color: var(--color-accent);
+        color: var(--color-accent-text);
+        /* transition: all 0.3s ease; */
+        transition-duration: 0.1s;
+        transition-timing-function: cubic-bezier(1, 0, 0, 1);
+        transition-property: filter;
+    }
+
+    .portion button:hover {
+        filter: brightness(85%);
+    }
+
+    .portion button:active {
+        filter: brightness(65%);
+    }
+
+    .ingredientList {
+        background-color: var(--color-secondary);
+        color: var(--color-secondary-text);
+        padding-bottom: 5px;
+        margin-bottom: 20px;
+    }
+
+    .ingredientList h1 {
+        background-color: var(--color-primary);
+    }
+
+    .ingredientAmount {
+        text-align: right;
+        margin-right: 10px;
+    }
+
+    .ingredientName {
+        text-align: left;
+    }
+
 </style>
+
+<script>
+    class IngredientList extends HTMLElement {
+        constructor() {
+            super();
+            // this.shadow = this.attachShadow({ mode: 'open' });
+
+            // let currentAmount = 
+            const originalAmount = parseInt(this.dataset.originalamount ? this.dataset.originalamount : '1');
+            let currentAmount = originalAmount;
+            const minusButton = this.querySelector('#minus');
+            const plusButton = this.querySelector('#plus');
+            const amounts = this.querySelectorAll('.amount');
+
+            const amountList = amounts.entries();
+            for (const [_, amountEntry] of amountList) {
+                const element = amountEntry.getAttribute('data-originalamount');
+                const originalElementValue = parseFloat(element ?? '1');
+                console.log(amountEntry);
+                amountEntry.textContent = '' + (originalElementValue / originalAmount * currentAmount).toPrecision(3);
+            }
+
+            minusButton?.addEventListener('click', () => {
+                currentAmount--;
+                const amountList = amounts.entries();
+                for (const [_, amountEntry] of amountList) {
+                    const element = amountEntry.getAttribute('data-originalamount');
+                    const originalElementValue = parseFloat(element ?? '1');
+                    amountEntry.textContent = '' + (originalElementValue / originalAmount * currentAmount).toPrecision(3);
+                }
+            });
+
+            plusButton?.addEventListener('click', () => {
+                currentAmount++;
+                const amountList = amounts.entries();
+                for (const [_, amountEntry] of amountList) {
+                    const element = amountEntry.getAttribute('data-originalamount');
+                    const originalElementValue = parseFloat(element ?? '1');
+                    amountEntry.textContent = '' + (originalElementValue / originalAmount * currentAmount).toPrecision(3);
+                }
+            });
+        }
+    }
+
+    customElements.define('ingredient-container', IngredientList);
+</script>

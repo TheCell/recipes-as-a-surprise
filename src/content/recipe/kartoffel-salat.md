@@ -14,13 +14,13 @@ overview: {
     totalTime: 80,
     totalTimeUnit: 'Minuten'
 }
+portion: {
+    amount: 4,
+    measure: 'Portionen',
+}
 ingredients: [
     {
-        name: '',
-        portion: {
-            amount: 4,
-            measure: 'Portionen'
-        },
+        name: 'Zutaten',
         ingredients: [
             {
                 name: 'festkochende Kartoffeln',
@@ -51,10 +51,6 @@ ingredients: [
     },
     {
         name: 'Sauce',
-        portion: {
-            amount: 4,
-            measure: 'Portionen'
-        },
         ingredients: [
             {
                 name: 'Senf',

@@ -17,12 +17,12 @@ const recipe = defineCollection({
 				.transform((val) => new Date(val)),
 			image: image(),
 			category: z.enum(CATEGORIES),
+			portion: z.object({
+				amount: z.number(),
+				measure: z.enum(PORTION),
+			}),
 			ingredients: z.array(z.object({
-				name: z.string(),
-				portion: z.object({
-					amount: z.number(),
-					measure: z.enum(PORTION),
-				}),
+				name: z.string().default('Zutaten'),
 				ingredients: z.array(z.object({
 					name: z.string(),
 					amount: z.number(),

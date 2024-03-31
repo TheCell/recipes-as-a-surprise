@@ -18,6 +18,7 @@ type Props = CollectionEntry<'recipe'>;
 
 const recipe = Astro.props;
 const ingredients = recipe.data.ingredients;
+const portion = recipe.data.portion;
 
 const { Content } = await recipe.render();
 // const { Content, headings, remarkPluginFrontmatter } = await recipe.render()
@@ -25,9 +26,11 @@ const { Content } = await recipe.render();
 ---
 
 <RecipeLayout
-    id={recipe.id}
-    data={recipe.data}>
-    <Ingredients ingredients={ingredients}></Ingredients>
+    id={ recipe.id }
+    data={ recipe.data }>
+    <Ingredients
+        ingredients={ ingredients }
+        portion={ portion } />
     <RecipeHeader
         title={ recipe.data.title }
         image={ recipe.data.image }
