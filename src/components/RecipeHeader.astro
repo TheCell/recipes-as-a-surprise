@@ -6,10 +6,11 @@ type Props = {
     title: string;
     image: CollectionEntry<'recipe'>['data']['image'];
     overview: CollectionEntry<'recipe'>['data']['overview'];
+    description: CollectionEntry<'recipe'>['data']['description'];
     tags: CollectionEntry<'recipe'>['data']['tags'];
 }
 
-const { title, image, overview, tags } = Astro.props;
+const { title, image, overview, description, tags } = Astro.props;
 
 ---
 
@@ -28,6 +29,9 @@ const { title, image, overview, tags } = Astro.props;
         <div class="timeContainer">
             Kochzeit: <span class="font-bold">{ overview.activeTime }</span> <span>{ overview.activeTimeUnit }</span>
             Gesamtzeit: <span class="font-bold">{ overview.totalTime }</span> <span>{ overview.totalTimeUnit }</span>
+        </div>
+        <div class="descriptionContainer">
+            { description }
         </div>
         <div class="tagContainer">
             {
@@ -52,14 +56,31 @@ const { title, image, overview, tags } = Astro.props;
         padding: 0px 20px;
     }
 
+    .infoContainer > div {
+        /* padding: 40px; */
+        padding-left: 40px;
+        padding-right: 40px;
+        margin-bottom: 20px;
+    }
+    
     .timeContainer {
         margin-left: 40px;
-        margin-top: 40px;
+        margin-right: 40px;
+        padding-left: 0px;
+        padding-right: 0px;
+        /* margin-top: 40px; */
+        background-color: var(--color-secondary);
+        color: var(--color-secondary-text);
+    }
+
+    .descriptionContainer {
+        /* margin-left: 40px;
+        margin-top: 10px; */
     }
 
     .tagContainer {
-        margin-left: 40px;
-        margin-top: 10px;
+        /* padding: 0px 40px; */
+        /* width: 100%; */
     }
 
     h1 {
@@ -75,5 +96,7 @@ const { title, image, overview, tags } = Astro.props;
         padding: 6px 15px;
         border-radius: 15px;
         margin-right: 5px;
+        margin-bottom: 10px;
+        display: inline-block;
     }
 </style>

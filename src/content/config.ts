@@ -9,7 +9,7 @@ const recipe = defineCollection({
 	schema: ({ image }) =>
 		z.object({
 			title: z.string().max(80),
-			description: z.string(),
+			description: z.string().default(''),
 			// Transform string to Date object
 			pubDate: z
 				.string()
