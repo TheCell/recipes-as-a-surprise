@@ -5,14 +5,16 @@ import type { CollectionEntry } from 'astro:content';
 type Props = {
     title: string;
     image: CollectionEntry<'recipe'>['data']['image'];
+    overview: CollectionEntry<'recipe'>['data']['overview'];
+    tags: CollectionEntry<'recipe'>['data']['tags'];
 }
 
-const { title, image } = Astro.props;
+const { title, image, overview, tags } = Astro.props;
 
 ---
 
-<div class="recipeHeader bg-primary">
-    <div class="h-full w-3/5 imageContainer">
+<div class="recipeHeader">
+    <div class="h-full w-1/2 imageContainer">
         <Image
             src={image}
             width={600}
@@ -21,8 +23,17 @@ const { title, image } = Astro.props;
             class='object-cover h-full w-full'
             alt={`img of ${title}`}/>
     </div>
-    <div class="w-2/5">
+    <div class="w-1/2 infoContainer">
         <h1>{title}</h1>
+        <div class="timeContainer">
+            Kochzeit: <span class="font-bold">{ overview.activeTime }</span> <span>{ overview.activeTimeUnit }</span>
+            Gesamtzeit: <span class="font-bold">{ overview.totalTime }</span> <span>{ overview.totalTimeUnit }</span>
+        </div>
+        <div class="tagContainer">
+            {
+                tags && tags.map(tag => (<span class="tag">{tag}</span>))
+            }
+        </div>
     </div>
 </div>
 
@@ -37,7 +48,32 @@ const { title, image } = Astro.props;
         clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
     }
 
+    .infoContainer {
+        padding: 0px 20px;
+    }
+
+    .timeContainer {
+        margin-left: 40px;
+        margin-top: 40px;
+    }
+
+    .tagContainer {
+        margin-left: 40px;
+        margin-top: 10px;
+    }
+
     h1 {
         font-size: 2rem;
+        margin: 20px 0px;
+        text-align: center;
+        background-color: var(--color-primary);
+    }
+
+    .tag {
+        background-color: var(--color-accent);
+        color: var(--color-accent-text);
+        padding: 6px 15px;
+        border-radius: 15px;
+        margin-right: 5px;
     }
 </style>

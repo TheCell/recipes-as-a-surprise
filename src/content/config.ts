@@ -2,6 +2,7 @@ import { defineCollection, z } from 'astro:content'
 import { CATEGORIES } from '@/data/categories'
 import { MEASURES } from '@/data/measures'
 import { PORTION } from '@/data/portion'
+import { TIMES } from '@/data/times'
 
 const recipe = defineCollection({
 	// Type-check frontmatter using a schema
@@ -30,7 +31,9 @@ const recipe = defineCollection({
 			})),
 			overview: z.object({
 				activeTime: z.number(),
+				activeTimeUnit: z.enum(TIMES),
 				totalTime: z.number(),
+				totalTimeUnit: z.enum(TIMES),
 			}),
 			tags: z.array(z.string()),
 			draft: z.boolean().default(false)

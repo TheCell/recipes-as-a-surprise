@@ -6,9 +6,13 @@ image: '../../assets/under-construction-warning-sign-vector.jpg'
 category: 'Mahlzeit'
 tags:
     - Kartoffeln
+    - TestTag
+    - nochEins
 overview: {
     activeTime: 50,
-    totalTime: 80
+    activeTimeUnit: 'Minuten',
+    totalTime: 80,
+    totalTimeUnit: 'Minuten'
 }
 ingredients: [
     {

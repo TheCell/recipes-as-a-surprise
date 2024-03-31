@@ -19,17 +19,21 @@ html {
   html.light:root {
     color-scheme: light;
     --color-primary: #FFE15D;
+    --color-primary-text: #151515;
     --color-secondary: #F49D1A;
     --color-danger: #DC3535;
     --color-accent: #B01E68;
+    --color-accent-text: #bdb9b9;
   }
   
   html.dark:root {
     color-scheme: dark;
     --color-primary: #030303;
+    --color-primary-text: #f1f1f1;
     --color-secondary: #000000;
     --color-danger: #0c0c0c;
     --color-accent: #1b1b1b;
+    --color-accent-text: #bdb9b9;
   }
 }
 
