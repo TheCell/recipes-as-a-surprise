@@ -1,0 +1,52 @@
+---
+import MoonIcon from "./icons/MoonIcon.astro";
+import SunIcon from "./icons/SunIcon.astro";
+---
+
+<theme-switch>
+    <button
+      id="themeToggle"
+      aria-label="toggle theme">
+        <div class="lightSymbol">
+            <MoonIcon />
+        </div>
+        <div class="darkSymbol">
+            <SunIcon />
+        </div>
+    </button>
+</theme-switch>
+
+<style>
+    html.dark .darkSymbol {
+        display: none;
+    }
+
+    html.light .lightSymbol {
+        display: none;
+    }
+</style>
+<script>
+    class ThemeSwitch extends HTMLElement {
+        constructor() {
+            super();
+
+            const htmlElement = document.documentElement;
+            const darkThemeSystemPreference = window.matchMedia('(prefers-color-scheme: dark)');
+            let currentTheme = darkThemeSystemPreference.matches ? 'dark' : 'light';
+            currentTheme = localStorage.getItem('theme') || currentTheme;
+
+            htmlElement.classList.remove('light', 'dark');
+            htmlElement.classList.add(currentTheme);
+
+            const toggleButton = this.querySelector('#themeToggle');
+            toggleButton?.addEventListener('click', () => {
+                currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+                htmlElement.classList.remove('light', 'dark');
+                htmlElement.classList.add(currentTheme);
+                localStorage.setItem('theme', currentTheme);
+            });
+        }
+    }
+
+    customElements.define('theme-switch', ThemeSwitch);
+</script>

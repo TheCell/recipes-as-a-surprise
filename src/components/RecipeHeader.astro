@@ -1,0 +1,43 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+
+type Props = {
+    title: string;
+    image: CollectionEntry<'recipe'>['data']['image'];
+}
+
+const { title, image } = Astro.props;
+
+---
+
+<div class="recipeHeader bg-primary">
+    <div class="h-full w-3/5 imageContainer">
+        <Image
+            src={image}
+            width={600}
+            height={200}
+            format='webp'
+            class='object-cover h-full w-full'
+            alt={`img of ${title}`}/>
+    </div>
+    <div class="w-2/5">
+        <h1>{title}</h1>
+    </div>
+</div>
+
+<style>
+    .recipeHeader {
+        grid-area: recipeHeader;
+        height: 400px;
+        display: flex;
+    }
+
+    .imageContainer {
+        clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+</style>

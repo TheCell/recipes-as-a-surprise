@@ -3,6 +3,7 @@ import { type CollectionEntry } from 'astro:content';
 import RecipeLayout from '@/layouts/RecipeLayout';
 import { getRecipes } from '@/utils';
 import Ingredients from '@/components/Ingredients';
+import RecipeHeader from '@/components/RecipeHeader';
 
 // const recipes = await getCollection('recipe');
 export async function getStaticPaths() {
@@ -27,6 +28,7 @@ const { Content } = await recipe.render();
     id={recipe.id}
     data={recipe.data}>
     <Ingredients ingredients={ingredients}></Ingredients>
+    <RecipeHeader title={ recipe.data.title } image={ recipe.data.image } />
     <div class="content">
         <Content />
     </div>

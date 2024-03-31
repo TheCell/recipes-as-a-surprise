@@ -14,3 +14,25 @@ html {
     font-family: 'Josefin Slab', serif;
     font-weight: 500;
 }
+
+@layer base {
+  html.light:root {
+    color-scheme: light;
+    --color-primary: #FFE15D;
+    --color-secondary: #F49D1A;
+    --color-danger: #DC3535;
+    --color-accent: #B01E68;
+  }
+  
+  html.dark:root {
+    color-scheme: dark;
+    --color-primary: #030303;
+    --color-secondary: #000000;
+    --color-danger: #0c0c0c;
+    --color-accent: #1b1b1b;
+  }
+}
+
+h1 {
+  color: var(--color-danger);
+}
