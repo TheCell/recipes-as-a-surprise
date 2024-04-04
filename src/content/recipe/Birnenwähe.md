@@ -1,18 +1,11 @@
 ---
-title: 'Kartoffelsalat'
-description: 'Bei diesem klassischen Kartoffelsalat-Rezept sorgt Bouillon für Würze. Und die Kartoffelsalat-Sauce mit Mayonnaise, Senf und Joghurt ist einfach ein Hit.'
+title: 'Birnenwähe'
+description: 'Original schweizer Rezept'
 pubDate: 'Mar 30 2024'
-image: '../../assets/develop_image_01.jpg'
-category: 'Mahlzeit'
+image: '../../assets/develop_image_04.jpg'
+category: 'Dessert'
 tags:
-    - Kartoffeln
-    - TestTag
-    - nochEins
-    - nochEins
-    - nochEins
-    - nochEins
-    - nochEins
-    - nochEins
+    - Birnen
 overview: {
     activeTime: 50,
     activeTimeUnit: 'Minuten',
@@ -20,8 +13,8 @@ overview: {
     totalTimeUnit: 'Minuten'
 }
 portion: {
-    amount: 4,
-    portion: 'Portionen',
+    amount: 1,
+    portion: 'Kuchen',
 }
 ingredients: [
     {

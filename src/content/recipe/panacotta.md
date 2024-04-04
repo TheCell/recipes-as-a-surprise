@@ -1,26 +1,20 @@
 ---
-title: 'Kartoffelsalat'
-description: 'Bei diesem klassischen Kartoffelsalat-Rezept sorgt Bouillon für Würze. Und die Kartoffelsalat-Sauce mit Mayonnaise, Senf und Joghurt ist einfach ein Hit.'
+title: 'Panacotta'
+description: 'Fertigmix nichts besonderes'
 pubDate: 'Mar 30 2024'
-image: '../../assets/develop_image_01.jpg'
-category: 'Mahlzeit'
+image: '../../assets/develop_image_02.jpg'
+category: 'Dessert'
 tags:
-    - Kartoffeln
-    - TestTag
-    - nochEins
-    - nochEins
-    - nochEins
-    - nochEins
-    - nochEins
-    - nochEins
+    - Süss
+    - Himbeer
 overview: {
-    activeTime: 50,
+    activeTime: 20,
     activeTimeUnit: 'Minuten',
-    totalTime: 80,
+    totalTime: 90,
     totalTimeUnit: 'Minuten'
 }
 portion: {
-    amount: 4,
+    amount: 2,
     portion: 'Portionen',
 }
 ingredients: [

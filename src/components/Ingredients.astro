@@ -20,7 +20,7 @@ const originalAmount = portion.amount;
                     <h1>
                         { ingredient.name }
                         <span class:list={[index > 0 ? 'hidden' : '']}>
-                            <span class="font-bold amount" data-originalamount={portion.amount}>{ portion.amount }</span> { portion.measure }
+                            <span class="font-bold amount" data-originalamount={portion.amount}>{ portion.amount }</span> { portion.portion }
                         </span>
                     </h1>
                     <div class:list={['portion', index > 0 ? 'hidden' : '']} >

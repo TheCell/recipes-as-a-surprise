@@ -4,6 +4,7 @@ import RecipeLayout from '@/layouts/RecipeLayout';
 import { getRecipes } from '@/utils';
 import Ingredients from '@/components/Ingredients';
 import RecipeHeader from '@/components/RecipeHeader';
+import OtherRecipes from '@/components/OtherRecipes';
 
 // const recipes = await getCollection('recipe');
 export async function getStaticPaths() {
@@ -40,6 +41,8 @@ const { Content } = await recipe.render();
     <div class="content">
         <Content />
     </div>
+    <OtherRecipes>
+    </OtherRecipes>
     <style>
         .content {
             grid-area: content;

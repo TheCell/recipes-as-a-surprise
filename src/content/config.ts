@@ -19,7 +19,7 @@ const recipe = defineCollection({
 			category: z.enum(CATEGORIES),
 			portion: z.object({
 				amount: z.number(),
-				measure: z.enum(PORTION),
+				portion: z.enum(PORTION),
 			}),
 			ingredients: z.array(z.object({
 				name: z.string().default('Zutaten'),
