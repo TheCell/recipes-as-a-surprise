@@ -1,11 +1,58 @@
 ---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content'
+import { getLatestRecipes } from 'src/utils/recipe'
+import FormattedDate from './FormattedDate.astro';
+
+type Props = {
+    id: CollectionEntry<'recipe'>['id']
+}
+
+const { id } = Astro.props;
+
+const recipes = await getLatestRecipes(6, id);
+
 ---
 <section>
-cool
+
+    {
+        recipes.map((recipe) => (
+            <a href={`/recipe/${recipe.slug}`}>
+                <Image src={recipe.image} alt={recipe.title} />
+                <div>
+                    <h2>{recipe.title}</h2>
+                    <p><FormattedDate date={recipe.pubDate}></FormattedDate></p>
+                </div>
+            </a>
+        ))
+    }
 </section>
 
 <style>
     section {
         grid-area: sidepanelright;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        width: 100%;
+        padding: 1em;
+        grid-gap: 0.5em;
+    }
+
+    section a {
+        position: relative;
+    }
+    
+    a img {
+        aspect-ratio: 1/1;
+        object-fit: cover;
+    }
+
+    a div {
+        position: absolute;
+        bottom: 0;
+        background-color: var(--color-secondary);
+        padding: 0.5em;
+        margin-left: 0.5em;
     }
 </style>
