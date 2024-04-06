@@ -15,16 +15,16 @@ const { title, image, overview, description, tags } = Astro.props;
 ---
 
 <div class="recipeHeader">
-    <div class="h-full w-1/2 imageContainer">
+    <div class="imageContainer">
         <Image
             src={image}
             width={600}
-            height={200}
+            height={600}
             format='webp'
             class='object-cover h-full w-full'
             alt={`img of ${title}`}/>
     </div>
-    <div class="w-1/2 infoContainer">
+    <div class="infoContainer">
         <h1>{title}</h1>
         <div class="timeContainer">
             Kochzeit: <span class="font-bold">{ overview.activeTime }</span> <span>{ overview.activeTimeUnit }</span>
@@ -52,15 +52,16 @@ const { title, image, overview, description, tags } = Astro.props;
     }
 
     .imageContainer {
+        width: 50%;
         clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
     }
 
     .infoContainer {
+        width: 50%;
         padding: 0px 20px;
     }
 
     .infoContainer > div {
-        /* padding: 40px; */
         padding-left: 40px;
         padding-right: 40px;
         margin-bottom: 20px;
@@ -71,19 +72,8 @@ const { title, image, overview, description, tags } = Astro.props;
         margin-right: 40px;
         padding-left: 0px;
         padding-right: 0px;
-        /* margin-top: 40px; */
         background-color: var(--color-secondary);
         color: var(--color-secondary-text);
-    }
-
-    .descriptionContainer {
-        /* margin-left: 40px;
-        margin-top: 10px; */
-    }
-
-    .tagContainer {
-        /* padding: 0px 40px; */
-        /* width: 100%; */
     }
 
     h1 {
@@ -101,5 +91,29 @@ const { title, image, overview, description, tags } = Astro.props;
         margin-right: 5px;
         margin-bottom: 10px;
         display: inline-block;
+    }
+
+    @media screen and (max-width: 768px) {
+        .recipeHeader {
+            flex-direction: column;
+            height: auto;
+        }
+
+        .imageContainer {
+            width: 100%;
+            clip-path: unset;
+            display: block;
+            height: 300px;
+        }
+
+        .infoContainer {
+            width: 100%;
+            display: block;
+            height: 400px;
+        }
+
+        .recipeHeader {
+            height: 700px;
+        }
     }
 </style>

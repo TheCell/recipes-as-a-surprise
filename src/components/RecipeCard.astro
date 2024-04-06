@@ -13,7 +13,7 @@ const { teaser } = Astro.props;
     <a class='relative overflow-hidden' href={`/recipe/${teaser.slug}/`}>
 		<Image
 			src={teaser.image}
-			width={600}
+			width={200}
 			height={200}
 			format='webp'
 			class='h-full min-w-full object-cover'
@@ -60,5 +60,11 @@ img {
 
 .tag {
 	margin-right: 0.5em;
+}
+
+@media screen and (max-width: 768px) {
+	.infos {
+		font-size: 0.8em;
+	}
 }
 </style>
