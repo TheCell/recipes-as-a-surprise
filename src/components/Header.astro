@@ -40,7 +40,7 @@ import ThemeSwitch from './ThemeSwitch.astro'
 
 	<div class="options">
 		<span>
-			<HeaderLink href='/tags' class=''>
+			<HeaderLink href='/tags'>
 				<TagIcon /> Tags
 			</HeaderLink>
 		</span>
@@ -70,6 +70,9 @@ import ThemeSwitch from './ThemeSwitch.astro'
 	}
 
 	.options > span {
+		float: right;
+		white-space: nowrap;
+		width: 4em;
 		/* display: inline-block; */
 		/* vertical-align: middle;
 		margin: 0px 20px;
