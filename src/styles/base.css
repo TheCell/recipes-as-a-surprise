@@ -3,16 +3,25 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'Josefin Slab Regular';
-    src: url('/fonts/JosefinSlab-VariableFont_wght.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
+  font-family: 'Josefin Slab Regular';
+  src: url('/fonts/JosefinSlab-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Raleway Thin';
+  src: url('/fonts/Raleway-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 html {
-    font-family: 'Josefin Slab', serif;
+    font-family: 'Raleway Thin', sans-serif;
     font-weight: 500;
+    background-color: var(--color-background);
 }
 
 @layer base {
@@ -20,11 +29,12 @@ html {
     color-scheme: light;
     --color-primary: #BCD979;
     --color-primary-text: #151515;
-    --color-secondary: #9DAD6F;
+    --color-secondary: #eef3de;
     --color-secondary-text: #151515;
     --color-accent: #545863;
     --color-accent-text: #d3d3d3;
-    --color-background: #C3DFE0;
+    --color-background: #ffffff;
+    --color-background-highlight: #C3DFE0;
   }
   
   html.dark:root {
@@ -36,6 +46,7 @@ html {
     --color-accent: #1b1b1b;
     --color-accent-text: #bdb9b9;
     --color-background: #101418;
+    --color-background-highlight: #101418;
   }
 }
 
