@@ -18,13 +18,13 @@ html {
 @layer base {
   html.light:root {
     color-scheme: light;
-    --color-primary: #FFE15D;
+    --color-primary: #BCD979;
     --color-primary-text: #151515;
-    --color-secondary: #F49D1A;
+    --color-secondary: #9DAD6F;
     --color-secondary-text: #151515;
-    --color-danger: #DC3535;
-    --color-accent: #B01E68;
-    --color-accent-text: #bdb9b9;
+    --color-accent: #545863;
+    --color-accent-text: #d3d3d3;
+    --color-background: #C3DFE0;
   }
   
   html.dark:root {
@@ -33,9 +33,9 @@ html {
     --color-primary-text: #f1f1f1;
     --color-secondary: #000000;
     --color-secondary-text: #f1f1f1;
-    --color-danger: #0c0c0c;
     --color-accent: #1b1b1b;
     --color-accent-text: #bdb9b9;
+    --color-background: #101418;
   }
 }
 

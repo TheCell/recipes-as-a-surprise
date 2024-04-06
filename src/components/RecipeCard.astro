@@ -1,36 +1,63 @@
 ---
 import { Image } from 'astro:assets'
-import FormattedDate from '@/components/FormattedDate';
+import type { RecipeTeaser } from 'src/utils/recipe';
 
-const {
-	id,
-	data: { title, pubDate, image, category },
-	slug
-} = Astro.props
+type Props = {
+	teaser: RecipeTeaser
+}
+
+const { teaser } = Astro.props;
 ---
 
-<div>
-    {{id}}
-    <a class='relative overflow-hidden' href={`/recipe/${slug}/`}>
+<div class="wrapper">
+    <a class='relative overflow-hidden' href={`/recipe/${teaser.slug}/`}>
 		<Image
-			src={image}
+			src={teaser.image}
 			width={600}
 			height={200}
 			format='webp'
-			class='h-full min-w-full object-cover hover:scale-[101%] transition-all duration-200 rounded-[2px]'
-			alt={`img of ${title}`}
-		/>
+			class='h-full min-w-full object-cover'
+			alt={`img of ${teaser.title}`} >
+		</Image>
 
-		<div class=''>
-			<div class=''></div>
-			<div class=''>
-				<div class=''>
-					<FormattedDate date={pubDate} />
-					<!-- <span class='text-sm'> {readTime}</span> -->
-				</div>
-
-				<span class='pb-4'>{category}</span>
+		<div class='infos'>
+			<h1 class=''>{ teaser.title }</h1>
+			<div class='timeAndTags'>
+				<span class="font-bold">{ teaser.overview.totalTime }</span> <span>{ teaser.overview.totalTimeUnit }</span>
+				|
+				{
+					teaser.tags && teaser.tags.map(tag => (<span class="tag">{tag}</span> ))
+				}
 			</div>
 		</div>
 	</a>
 </div>
+
+<style>
+.wrapper {
+	aspect-ratio: 1/1;
+	position: relative;
+}
+
+img {
+	object-fit: cover;
+}
+
+.infos {
+	position: relative;
+	float: left;
+	width: 100%;
+	margin-top: -4em;
+	padding: 0.5em 1em;
+	background-color: var(--color-background);
+}
+
+.timeAndTags {
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.tag {
+	margin-right: 0.5em;
+}
+</style>

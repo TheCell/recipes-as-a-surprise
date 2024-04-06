@@ -30,17 +30,52 @@ import ThemeSwitch from './ThemeSwitch.astro'
 ---
 
 <nav>
-	<a class='' href='/'>Home</a>
+	<div class="links">
+		<a class='' href='/'>Home</a>
+	</div>
 
-	<ThemeSwitch />
-    <HeaderLink href='/tags' class=''>
-        <TagIcon /> Tags
-    </HeaderLink>
+	<div>
+
+	</div>
+
+	<div class="options">
+		<span>
+			<HeaderLink href='/tags' class=''>
+				<TagIcon /> Tags
+			</HeaderLink>
+		</span>
+		<span>
+			<ThemeSwitch />
+		</span>
+	</div>
 </nav>
 
 <style>
 	nav {
 		grid-area: header;
+		display: inline-grid;
+		grid-template-columns: auto auto auto;;
+		background-color: var(--color-primary);
+		color: var(--color-primary-text);
+	}
+
+	nav > div {
+		/* display: inline-grid; */
+	}
+
+	.options {
+		/* text-align: end; */
+		/* vertical-align: middle; */
+		/* width: 100%; */
+	}
+
+	.options > span {
+		/* display: inline-block; */
+		/* vertical-align: middle;
+		margin: 0px 20px;
+		display: ruby; */
+		/* min-width: 50px; */
+		/* width: 100px; */
 	}
 </style>
 <!-- <header class='relative flex items-center h-12 font-semibold'>

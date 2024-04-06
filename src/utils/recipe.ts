@@ -1,4 +1,4 @@
-import { getCollection, type ImageFunction } from 'astro:content'
+import { getCollection, type CollectionEntry } from 'astro:content'
 
 export const getRecipes = async (max?: number) => {
 	return (await getCollection('recipe'))
@@ -7,10 +7,12 @@ export const getRecipes = async (max?: number) => {
 		.slice(0, max)
 }
 
-interface RecipeTeaser {
+export interface RecipeTeaser {
 	title: string;
 	pubDate: Date;
 	slug: string;
+	overview: CollectionEntry<'recipe'>['data']['overview'];
+	tags: CollectionEntry<'recipe'>['data']['tags'];
 	image: {
 		src: string;
 		width: number;
@@ -30,6 +32,8 @@ export const getLatestRecipes = async (max?: number, excludeId?: string ) => {
 				title: recipe.data.title,
 				pubDate: recipe.data.pubDate,
 				slug: recipe.slug,
+				overview: recipe.data.overview,
+				tags: recipe.data.tags,
 				image: recipe.data.image
 			}
 			teasers.push(recipeTeaser);

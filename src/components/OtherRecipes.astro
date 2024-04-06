@@ -2,7 +2,6 @@
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content'
 import { getLatestRecipes } from 'src/utils/recipe'
-import FormattedDate from './FormattedDate.astro';
 
 type Props = {
     id: CollectionEntry<'recipe'>['id']
@@ -21,13 +20,13 @@ const recipes = await getLatestRecipes(6, id);
                 <Image src={recipe.image} alt={recipe.title} />
                 <div>
                     <h2>{recipe.title}</h2>
-                    <p><FormattedDate date={recipe.pubDate}></FormattedDate></p>
+                    
                 </div>
             </a>
         ))
     }
 </section>
-
+<!-- <p><FormattedDate date={recipe.pubDate}></FormattedDate></p> -->
 <style>
     section {
         grid-area: sidepanelright;
@@ -37,6 +36,7 @@ const recipes = await getLatestRecipes(6, id);
         width: 100%;
         padding: 1em;
         grid-gap: 0.5em;
+        margin-bottom: auto;
     }
 
     section a {
