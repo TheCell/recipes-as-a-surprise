@@ -8,7 +8,7 @@ type Props = {
 }
 
 const { data } = Astro.props
-const { title, description, pubDate, image: image, tags } = data
+const { title, description, pubDate, image: image } = data
 
 const articleDate = pubDate.toISOString()
 ---
@@ -18,6 +18,5 @@ const articleDate = pubDate.toISOString()
     description={description}
     image={image?.src}
     articleDate={articleDate}>
-    <span>{{tags}}</span>
     <slot />
 </BaseLayout>
