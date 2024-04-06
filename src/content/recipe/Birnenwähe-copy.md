@@ -46,36 +46,6 @@ ingredients: [
                 measure: 'EL'
             }
         ]
-    },
-    {
-        name: 'Sauce',
-        ingredients: [
-            {
-                name: 'Senf',
-                amount: 1,
-                measure: 'EL'
-            },
-            {
-                name: 'Mayonnaise',
-                amount: 2,
-                measure: 'EL'
-            },
-            {
-                name: 'Joghurt nature',
-                amount: 3,
-                measure: 'EL'
-            },
-            {
-                name: 'Rapsöl',
-                amount: 2,
-                measure: 'EL'
-            },
-            {
-                name: '	Schnittlauch, fein geschnitten',
-                amount: 3,
-                measure: 'EL'
-            }
-        ]
     }
 ]
 ---

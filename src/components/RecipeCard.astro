@@ -26,7 +26,7 @@ const { teaser } = Astro.props;
 				<span class="font-bold">{ teaser.overview.totalTime }</span> <span>{ teaser.overview.totalTimeUnit }</span>
 				|
 				{
-					teaser.tags && teaser.tags.map(tag => (<span class="tag">{tag}</span> ))
+					teaser.tags && teaser.tags.map(tag => (<span class="smallTag">{tag}</span> ))
 				}
 			</div>
 		</div>
@@ -58,8 +58,15 @@ img {
 	white-space: nowrap;
 }
 
-.tag {
+.smallTag {
 	margin-right: 0.5em;
+}
+
+h1 {
+  background-color: unset;
+  text-align: unset;
+  font-size: unset;
+  margin: unset;
 }
 
 @media screen and (max-width: 768px) {

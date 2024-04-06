@@ -42,3 +42,75 @@ export const getLatestRecipes = async (max?: number, excludeId?: string ) => {
 
 	return teasers;
 }
+
+export const getRecipesByTag = async (tag: string) => {
+	const teasers: Array<RecipeTeaser> = [];
+	
+	(await getCollection('recipe'))
+		.filter((recipe) => !recipe.data.draft
+			&& recipe.data.tags.some((entry) => entry.toLowerCase() === tag.toLowerCase()))
+		.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+		.forEach((recipe) => {
+			const recipeTeaser: RecipeTeaser = {
+				title: recipe.data.title,
+				pubDate: recipe.data.pubDate,
+				slug: recipe.slug,
+				overview: recipe.data.overview,
+				tags: recipe.data.tags,
+				image: recipe.data.image
+			}
+			teasers.push(recipeTeaser);
+		});
+	
+
+	return teasers;
+}
+
+export const getRecipesByCategory = async (category: string) => {
+	const teasers: Array<RecipeTeaser> = [];
+	
+	(await getCollection('recipe'))
+		.filter((recipe) => !recipe.data.draft
+			&& recipe.data.category.toLowerCase() === category.toLowerCase())
+		.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+		.forEach((recipe) => {
+			const recipeTeaser: RecipeTeaser = {
+				title: recipe.data.title,
+				pubDate: recipe.data.pubDate,
+				slug: recipe.slug,
+				overview: recipe.data.overview,
+				tags: recipe.data.tags,
+				image: recipe.data.image
+			}
+			teasers.push(recipeTeaser);
+		});
+	
+
+	return teasers;
+}
+
+export const getAllTags = async () => {
+	const tags: Array<string> = [];
+	(await getCollection('recipe'))
+		.forEach((recipe) => {
+			recipe.data.tags.forEach((tag) => {
+				if (!tags.includes(tag.toLowerCase())) {
+					tags.push(tag.toLowerCase());
+				}
+			});
+		});
+
+	return tags;
+}
+
+export const getAllCategories = async () => {
+	const categories: Array<string> = [];
+	(await getCollection('recipe'))
+		.forEach((recipe) => {
+			if (!categories.includes(recipe.data.category)) {
+				categories.push(recipe.data.category);
+			}
+		});
+
+	return categories;
+}

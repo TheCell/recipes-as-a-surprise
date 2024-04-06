@@ -22,6 +22,11 @@ import ThemeSwitch from './ThemeSwitch.astro'
 				<TagIcon /> Tags
 			</HeaderLink>
 		</span>
+		<span>
+			<HeaderLink href='/categories'>
+				<TagIcon /> Kategorien
+			</HeaderLink>
+		</span>
 	</div>
 </nav>
 
@@ -43,7 +48,8 @@ import ThemeSwitch from './ThemeSwitch.astro'
 
 	.options > span {
 		white-space: nowrap;
-		width: 4.5em;
+		min-width: 2em;
+		margin-right: 0.5em;
 		text-align: center;
 	}
 

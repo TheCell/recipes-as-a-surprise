@@ -1,0 +1,40 @@
+---
+import { getAllTags } from '@/utils'
+
+const tags = await getAllTags();
+---
+
+<div class="wrapper">
+    <h1>Tags</h1>
+    <p>Klicke auf ein Tag um alle Rezepte mit diesem Tag zu sehen</p>
+
+    <ul>
+        {
+            tags.map((tag) => (
+            <li>
+                <a href={`/tags/${tag}`}><span class="tag">{ tag }</span></a>
+            </li>))
+        }
+    </ul>
+</div>
+
+<style>
+    .wrapper {
+        grid-area: recipeHeader;
+        text-align: center;
+        min-height: 30vh;
+        width: 50%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    h1 {
+        margin-top: 2em;
+    }
+
+    p {
+        margin-bottom: 2em;
+    }
+</style>

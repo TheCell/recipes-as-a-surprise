@@ -1,0 +1,21 @@
+---
+import RecipeList from '@/components/RecipeList';
+import BaseLayout from '@/layouts/BaseLayout';
+import { getAllTags } from '@/utils';
+
+export async function getStaticPaths() {
+    const tags = await getAllTags();
+
+    return tags.map((tag) => ({
+		params: { tag },
+		props: { tag }
+	}))
+}
+
+const { tag } = Astro.props
+
+---
+
+<BaseLayout title="Liste der Einträge pro Tag">
+    <RecipeList tag={ tag }></RecipeList>
+</BaseLayout>

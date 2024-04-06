@@ -52,7 +52,11 @@ html {
 
 h1 {
   color: var(--color-accent);
+  background-color: var(--color-primary);
   font-weight: 700;
+  text-align: center;
+  font-size: 2rem;
+  margin: 20px 0px;
 }
 
 .content ol {
@@ -77,4 +81,14 @@ h1 {
   padding: 5px 10px;
   background-color: var(--color-accent);
   color: var(--color-accent-text);
+}
+
+.tag {
+  background-color: var(--color-accent);
+  color: var(--color-accent-text);
+  padding: 6px 15px;
+  border-radius: 15px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  display: inline-block;
 }

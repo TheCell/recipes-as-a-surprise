@@ -1,8 +1,15 @@
 ---
+import { getLatestRecipes, getRecipesByCategory, getRecipesByTag } from '@/utils';
 import RecipeCard from './RecipeCard.astro'
-import { getLatestRecipes } from 'src/utils/recipe'
 
-const recipes = await getLatestRecipes();
+type Props = {
+    tag?: string;
+    category?: string;
+}
+
+const { tag, category } = Astro.props;
+
+const recipes = tag != null ? await getRecipesByTag(tag) : category != null ? await getRecipesByCategory(category) : await getLatestRecipes();
 
 ---
 
