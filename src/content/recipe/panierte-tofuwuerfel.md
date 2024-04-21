@@ -2,7 +2,7 @@
 title: 'Panierte Tofuwürfel'
 description: 'Adas berühmte panierte Tofuwürfel'
 pubDate: 'Apr 07 2024'
-image: '../../assets/develop_image_02.jpg'
+image: '../../assets/Tofuwürfel.jpg'
 category: 'Mahlzeit'
 tags:
     - Tofu
