@@ -27,9 +27,9 @@ html {
 @layer base {
   html.light:root {
     color-scheme: light;
-    --color-primary: #BCD979;
+    --color-primary: #bcd978;
     --color-primary-text: #151515;
-    --color-secondary: #eef3de;
+    --color-secondary: #edf2de;
     --color-secondary-text: #151515;
     --color-accent: #545863;
     --color-accent-text: #d3d3d3;
@@ -39,14 +39,14 @@ html {
   
   html.dark:root {
     color-scheme: dark;
-    --color-primary: #030303;
-    --color-primary-text: #f1f1f1;
-    --color-secondary: #000000;
-    --color-secondary-text: #f1f1f1;
-    --color-accent: #1b1b1b;
-    --color-accent-text: #bdb9b9;
-    --color-background: #101418;
-    --color-background-highlight: #101418;
+    --color-primary: #d7bb7e;
+    --color-primary-text: #151515;
+    --color-secondary: #f3ede2;
+    --color-secondary-text: #151515;
+    --color-accent: #545863;
+    --color-accent-text: #d3d3d3;
+    --color-background: #292929;
+    --color-background-highlight: #C3DFE0;
   }
 }
 
