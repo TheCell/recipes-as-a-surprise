@@ -7,7 +7,9 @@ export const MEASURES = [
 	'l',
 	'g',
 	'kg',
-	'prise',
+	'Prise',
 	'Bund',
 	'Stück',
+	'Bohne',
+	'Packet'
 ] as const

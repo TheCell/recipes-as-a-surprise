@@ -1,5 +1,6 @@
 export const CATEGORIES = [
 	'Mahlzeit',
+	'Frühstück',
 	'Snack',
 	'Dessert',
 	'Drink',
