@@ -2,7 +2,7 @@
 title: 'Pancakes'
 description: 'Vegane Pancakes mit Früchten'
 pubDate: 'Apr 27 2024'
-image: '../../assets/Pancakes.jpg'
+image: '../../assets/images/Pancakes.jpg'
 category: 'Frühstück'
 tags:
     - Pancakes
