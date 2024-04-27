@@ -10,7 +10,7 @@ tags:
 overview: {
     activeTime: 20,
     activeTimeUnit: 'Minuten',
-    totalTime: 80,
+    totalTime: 20,
     totalTimeUnit: 'Minuten'
 }
 portion: {
