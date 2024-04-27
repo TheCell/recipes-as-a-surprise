@@ -144,8 +144,12 @@ const originalAmount = portion.amount;
             for (const [_, amountEntry] of amountList) {
                 const element = amountEntry.getAttribute('data-originalamount');
                 const originalElementValue = parseFloat(element ?? '1');
-                console.log(amountEntry);
-                amountEntry.textContent = '' + (originalElementValue / originalAmount * currentAmount).toPrecision(3);
+                var amount = (originalElementValue / originalAmount * currentAmount);
+                if (amount % 1 != 0) {
+                    amountEntry.textContent = '' + amount.toFixed(2);
+                } else {
+                    amountEntry.textContent = '' + amount;
+                }
             }
 
             minusButton?.addEventListener('click', () => {
@@ -154,7 +158,12 @@ const originalAmount = portion.amount;
                 for (const [_, amountEntry] of amountList) {
                     const element = amountEntry.getAttribute('data-originalamount');
                     const originalElementValue = parseFloat(element ?? '1');
-                    amountEntry.textContent = '' + (originalElementValue / originalAmount * currentAmount).toPrecision(3);
+                    var amount = (originalElementValue / originalAmount * currentAmount);
+                    if (amount % 1 != 0) {
+                    amountEntry.textContent = '' + amount.toFixed(2);
+                    } else {
+                        amountEntry.textContent = '' + amount;
+                    }
                 }
             });
 
@@ -164,7 +173,12 @@ const originalAmount = portion.amount;
                 for (const [_, amountEntry] of amountList) {
                     const element = amountEntry.getAttribute('data-originalamount');
                     const originalElementValue = parseFloat(element ?? '1');
-                    amountEntry.textContent = '' + (originalElementValue / originalAmount * currentAmount).toPrecision(3);
+                    var amount = (originalElementValue / originalAmount * currentAmount);
+                    if (amount % 1 != 0) {
+                        amountEntry.textContent = '' + amount.toFixed(2);
+                    } else {
+                        amountEntry.textContent = '' + amount;
+                    }
                 }
             });
         }

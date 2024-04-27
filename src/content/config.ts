@@ -1,8 +1,8 @@
-import { defineCollection, z } from 'astro:content'
-import { CATEGORIES } from '@/data/categories'
-import { MEASURES } from '@/data/measures'
-import { PORTION } from '@/data/portion'
-import { TIMES } from '@/data/times'
+import { defineCollection, z } from 'astro:content';
+import { CATEGORIES } from '@/data/categories';
+import { MEASURES } from '@/data/measures';
+import { PORTION } from '@/data/portion';
+import { TIMES } from '@/data/times';
 
 const recipe = defineCollection({
 	// Type-check frontmatter using a schema
