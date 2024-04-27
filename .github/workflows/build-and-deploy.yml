@@ -72,10 +72,6 @@ jobs:
             --site "https://newblog.thecell.eu/"
         working-directory: ${{ env.BUILD_PATH }}
 
-      - name: Build Pagefind
-        run: npm run postbuild
-        working-directory: ${{ env.BUILD_PATH }}
-        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
