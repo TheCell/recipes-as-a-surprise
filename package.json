@@ -5,16 +5,20 @@
   "keywords": [
     "astro",
     "astrojs",
-    "astro-template",
     "astro-blog",
     "astro-b"
   ],
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev": "tinacms dev -c \"astro dev\"",
+		"start": "astro dev",
+		"build": "tinacms build -c \"astro build\"",
+		"tinacms": "tinacms",
+		"sync": "astro sync",
+		"preview": "astro preview",
+		"postbuild": "pagefind --site dist",
+		"format:check": "prettier --plugin-search-dir=. --check .",
+		"format": "prettier --plugin-search-dir=. --write .",
+		"lint": "eslint ."
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
