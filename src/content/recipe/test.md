@@ -21,6 +21,8 @@ ingredients:
       - name: Wasser
         amount: 5
         measure: dl
+tags:
+  - test
 ---
 
 1. Zitrone schneiden
