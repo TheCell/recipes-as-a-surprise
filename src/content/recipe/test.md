@@ -18,6 +18,11 @@ ingredients:
       - name: Zitrone
         amount: 1
         measure: Stück
-      - {}
+      - name: Wasser
+        amount: 5
+        measure: dl
 ---
 
+1. Zitrone schneiden
+2. Zitrone in Wasser legen
+3. geniessen
