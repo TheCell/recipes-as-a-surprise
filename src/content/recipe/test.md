@@ -7,5 +7,17 @@ category: Drink
 portion:
   amount: 1
   portion: Stück
+overview:
+  activeTime: 10
+  activeTimeUnit: Minuten
+  totalTime: 10
+  totalTimeUnit: Minuten
+ingredients:
+  - name: ''
+    ingredients:
+      - name: Zitrone
+        amount: 1
+        measure: Stück
+      - {}
 ---
 
