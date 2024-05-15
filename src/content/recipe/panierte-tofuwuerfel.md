@@ -58,4 +58,4 @@ tags:
 1. Alle zutaten der **Sauce** zusammenrühren. **Tofu** in kleine Blöcke reissen und dann in die **Sauce** einlegen und umrühren. Das darf jetzt 1h stehen.
 2. Tofu mit Sauce zusammen in eine Pfanne geben und dann warten bis es anfängt zu bruzeln.
 3. Wenn es am bruzeln ist geben wir die **Stärke** dazu rühren alles um. Es sollte sich dabei einen feuchter Mantel ums Tofu bilden
-4. Dann direkt die **Semmelbrösel** dazugeben und noch einmal umrühren. Die Brösel sollten sich dann an die Würfel binden. Nun Braten wir die Würfel noch knusprig an.
+4. Dann direkt die **Semmelbrösel** dazugeben und noch einmal umrühren. Die Brösel sollten sich dann an die Würfel binden. Nun Braten wir die Würfel noch knusprig an. Dafür am Ende noch nen Schuss Öl dazu.
