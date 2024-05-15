@@ -16,7 +16,7 @@ ingredients:
   - name: Zutaten
     ingredients:
       - name: Tofu
-        amount: 500
+        amount: 400
         measure: g
       - name: Semmelbrösel
         amount: 100
