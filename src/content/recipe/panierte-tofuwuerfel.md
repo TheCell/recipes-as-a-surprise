@@ -2,7 +2,7 @@
 title: Panierte Tofuwürfel
 description: Adas berühmte panierte Tofuwürfel
 pubDate: 2024-04-07T00:00:00.000Z
-image: /src/assets/images../../assets/images/Tofuwürfel.jpg
+image: /src/assets/images/Tofuwürfel.jpg
 category: Mahlzeit
 portion:
   amount: 2
